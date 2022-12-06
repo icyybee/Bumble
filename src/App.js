@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./routes/home/home.page";
+import NavBar from "./routes/navbar/navbar.component";
+import Profile from "./routes/profile/profile.component";
+import SingleProfile from "./routes/singleProfile/singlep.component";
+import Chat from "./routes/chat/chat.component";
+import Login from "./routes/login/login.component";
 
-function App() {
+import { Route, Routes } from "react-router-dom";
+
+import "./index.scss";
+import Register from "./routes/register/register.component";
+
+const App = () =>  {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<NavBar />}>
+        <Route index element={<Home />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="singleprofile/:id" element={<SingleProfile />} />
+        <Route path="chatroom/:id" element={<Chat />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   );
 }
 

@@ -1,0 +1,9 @@
+@import '../../index.scss';
+
+.home__content {
+    display: flex;
+
+    @media (max-width: $bp-small) {
+        display: block;
+    }
+}

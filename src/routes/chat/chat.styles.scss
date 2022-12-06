@@ -1,0 +1,251 @@
+@import "../../index.scss";
+
+.chat {
+    @include themify($themes) {
+        background-color: themed("bg");
+        opacity: 1;
+
+        .container {
+            padding: 20px;
+            
+            .body {
+                align-items: center;
+                display: flex;
+                height: 87vh;
+                justify-content: center;
+                width: 100%;
+
+                .left,
+                .right {
+                    height: 100%;
+                    position: relative;
+                }
+
+                .left {
+                    width: 30%;
+                    background-color: themed("bg");
+                    
+                    & svg {
+                        backdrop-filter: blur(10px);
+                        background: rgba(0,0,0,.3);
+                        border-radius: 12px;
+                        font-size: 20px;
+                        height: 30px;
+                        margin-left: 10px;
+                        padding: 10px;
+                        position: absolute;
+                        top: 10%;
+                        width: 30px;
+                        fill: themed("profSvg");
+                        color: #fff;
+                        font-weight: 500;
+
+                        &:hover {
+                            fill: themed("svgHover");
+                        }
+                    }
+
+                    &--body {
+                        margin: 3rem;
+
+                        & img {
+                            border: 5px dotted green;
+                            border-radius: 50%;
+                            margin: auto;
+                            width: 5rem;
+                            aspect-ratio: 1/1;
+                            overflow: hidden;
+                            display: block;
+                            object-fit: cover;
+                        }
+
+                        .top p {
+                            text-align: center;
+                            margin-top: 1rem;
+                            color: themed("textColor");
+                            font-size: 1.5rem;
+                        }
+
+                        .middle {
+                            margin: 3rem 0rem;
+
+                            .details {
+                                display: flex;
+                                justify-content: space-between;
+                                border-bottom: 1px solid#0000001a;
+                                margin-bottom: 1rem;
+                                color: themed("textColor");
+                                font-size: 1.1rem;
+                            }
+                        }
+
+                        .bottom {
+                            display: flex;
+                            justify-content: center;
+
+                            & button {
+                                background-color: darkgreen;
+                                border: none;
+                                border-radius: 5px;
+                                padding: 11px 0px;
+                                width: 7rem;
+                                margin: 1rem;
+                                cursor: pointer;
+
+                                &:hover {
+                                    opacity: .5;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    width: 70%;
+                    background-color: themed("bgSoft");
+                    border-radius: 3px;
+
+                    .top {
+                        background-color: #0000004d;
+                        border-radius: 0px 1px 15px 0px;
+                        height: 60px;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 10px;
+
+                        .info {
+                            margin-left: 1rem;
+                            display: flex;
+
+                            & img {
+                                border-radius: 50%;
+                                position: absolute;
+                                width: 4rem;
+                                aspect-ratio: 1/1;
+                                overflow: hidden;
+                                display: block;
+                                object-fit: cover;
+                            }
+
+                            .dot-orange,
+                            .dot-green {
+                                border: 1px solid #000;
+                                border-radius: 50%;
+                                content: "";
+                                height: 9px;
+                                position: absolute;
+                                width: 9px;
+                                margin-top: 3.1rem;
+                                margin-left: 3rem;
+                            }
+
+                            .dot-green {
+                                background-color: #90ee90;
+                            }
+
+                            .dot-orange {
+                                background-color: #f8a916;
+                            }
+
+                            & span {
+                                font-size: 1.2rem;
+                                color: whitesmoke;
+                                margin-left: 5rem;
+                                align-self: center;
+                            }
+                        }
+
+                        .call {
+                            display: flex;
+                            margin: 1rem;
+
+                            & svg {
+                                fill: themed("svg");
+                                cursor: pointer;
+                                margin-right: 1.5rem;
+
+                                &:hover {
+                                    fill: themed("svgHover");
+                                }
+                            }
+                        }
+                    }
+
+                    .form {
+                        bottom: 0;
+                        position: absolute;
+                        width: 100%;
+                        
+                        & form {
+                            padding: 20px;
+                            display: flex;
+                            align-items: center;
+
+                            & input {
+                                background-color: transparent;
+                                border: none;
+                                border: 1px solid rgba(85,84,84,.5);
+                                border-radius: 10px;
+                                color:  #141315;
+                                outline: none;
+                                padding: 15px;
+                                width: 85%;
+                                margin-left: 2rem;
+                                font-size: 1rem;
+                            }
+
+                            & div {
+                                margin-left: 2rem;
+                                border: none;
+                                background: none;
+
+                                & svg {
+                                    fill: themed("svg");
+
+                                    &:hover {
+                                        fill: themed("svgHover");
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .chat-box {
+                        align-items: center;
+                        background-color: transparent;
+                        display: block;
+                        flex-direction: column;
+                        float: right;
+                        justify-content: left;
+                        margin-top: 20px;
+                        width: 10%;
+
+                        .contain {
+                            float: right;
+                            padding: 10px;
+                            align-items: center;
+                            display: flex; 
+                            
+                            .message {
+                                background: themed("setBd");
+                                border-radius: 10px;
+                                margin-right: 5px;
+                                padding: 2px 10px;
+                            }
+
+                            & img {
+                                aspect-ratio: 1/1;
+                                overflow: hidden;
+                                width: 2.7rem;
+                                display: block;
+                                object-fit: cover;
+                                border-radius: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

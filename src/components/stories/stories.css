@@ -1,0 +1,10 @@
+.flow-hide-x {
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  .flow-hide-x::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}

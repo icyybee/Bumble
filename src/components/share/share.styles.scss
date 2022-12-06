@@ -1,0 +1,121 @@
+@import "../../index.scss";
+
+.share {
+    @include themify($themes) {
+        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        border-radius: 10px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        margin:  0rem 2rem;
+
+        @media (max-width: $bp-tiny) {
+            margin: 0rem 1rem;
+        }
+
+        .container {
+            padding: 20px;
+
+            .top {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                input {
+                    font-size: .9rem;
+                    border: none;
+                    outline: none;
+                    padding: 20px 10px;
+                    background-color: transparent;
+                    width: 60%;
+                    color: themed("textColor");
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                }
+            }
+
+            hr {
+                margin: 20px 0px;
+                border: none;
+                height: 0.5px;
+                background-color: themed("border");
+            }
+
+            .bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+        
+                @media (max-width: $bp-small) {
+                    flex-direction: column;
+                }
+                
+                .left {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                @media (max-width: $bp-small) {
+                    flex-flow: wrap;
+                    gap: 10px;
+                }
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    img {
+                        height: 20px;
+                    }
+
+                    span {
+                        font-size: .9rem;
+                        color: gray;
+                    
+                        @media (max-width: $bp-small) {
+                            font-size: .7rem;
+                        }
+                    }
+                }
+            }
+
+                .right {
+                    button {
+                        border: none;
+                        padding: 10px 20px;
+                        color: white;
+                        cursor: pointer;
+                        background-color: darkgreen;
+                        border-radius: 3px;
+                        transition: all .2s ease-out;
+
+                        @media (max-width: $bp-small) {
+                            margin-top: 1rem;
+                        }
+
+                        &:hover {
+                            opacity: .5;
+                        }
+                    }
+                }
+            }
+
+            svg {
+                fill:#90ee90;
+
+                @media (max-width: $bp-small) {
+                   font-size: 1rem;
+                }
+            }
+        }
+    }
+}

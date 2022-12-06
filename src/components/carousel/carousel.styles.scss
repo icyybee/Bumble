@@ -1,0 +1,132 @@
+@import "../../index.scss";
+
+.carousel-container {
+    @include themify($themes) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        .carousel-wrapper {
+            display: flex;
+            width: 100%;
+            position: relative;
+
+            & svg {
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 48px;
+                height: 48px;
+                border-radius: 24px;
+                background-color: themed("carous");
+                border: 1px solid themed("carousBorder");
+                cursor: pointer;
+                fill: themed("textColor");
+
+                @media (max-width: $bp-small) {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        
+            .carousel-content-wrapper {
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+
+            .carousel-content {
+                height: 100%;
+                list-style: none;
+                display: flex;
+                transition: all 250ms linear;
+                width: 100%;
+                -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
+                scrollbar-width: none;  /* hide scrollbar in Firefox */
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                z-index: 0;
+
+                &::-webkit-scrollbar,
+                &::-webkit-scrollbar {
+                    display: none;
+                }    
+
+                & > * {    
+                    max-height: 250px;
+                    width: 30%;
+                    flex-shrink: 0;
+                    flex-grow: 1;
+                    margin-right: 1rem;
+                    color: #f0eef6;
+                    position: relative;
+                    
+                }
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                & .overlay {
+                    background: #00000085;
+                    height: 100%;
+                    left: 0;
+                    bottom: 0;
+                    position: absolute;
+                    width: 100%;
+                }
+                
+                .connect--name,
+                .connect--mutual {
+                    left: 0;
+                    margin: auto;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                }
+                
+                .connect--name {
+                    top: 50%;
+                }
+                
+                .connect--mutual {
+                    top: 60%;
+
+                    @media (max-width: $bp-tiny) {
+                        display: none;
+                    }
+                }
+                
+                .connect--btn {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    background-color: #90ee90;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-size: .9rem;
+                    font-weight: 500;
+                    outline: none;
+                    padding: .6rem;
+                    left: 0;
+                    transition: all .3s ease-in-out;
+
+                    @media (max-width: $bp-tiny) {
+                        padding: .3rem;
+                        font-size: .7rem;
+                    }
+                
+                    &:hover {
+                        background-color: darkgreen;
+                    }
+                }
+            }
+        }
+    }
+}

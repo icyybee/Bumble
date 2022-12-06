@@ -1,0 +1,70 @@
+@import "../../index.scss";
+
+.setting {
+    @include themify($themes) {
+        // transform: translateY(100vh);
+        background: themed("setBg");
+        padding: 30px;
+        position: absolute;
+        backdrop-filter: blur(15px);
+        margin: 0 75%;
+        width: 20%;
+        border: 1px solid #6666662e;
+        z-index: 1;
+        transition: all .2s;
+
+        @media (max-width: $bp-small) {
+            margin: 0 8%;
+            width: 75%;
+        }
+        
+        .container {
+            align-items: center;
+            background: themed("setBd") ;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            min-width: 80%;
+            padding: 20px
+        }
+
+        & h2 {
+            margin: 5px;
+            font-size: 1.4rem;
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 8px;
+
+            &--item {
+                display: flex;
+                margin-bottom: 10px;
+                cursor: pointer;
+
+                & svg {
+                    margin-right: 3px;
+                }
+            }
+        }
+
+        .logout {
+            cursor: pointer;
+            display: flex;
+            margin-top: 5px;
+            backdrop-filter: blur(15px);
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #00000096;
+            transition: all .2s ease-out;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}

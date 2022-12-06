@@ -1,0 +1,157 @@
+@import "../../index.scss";
+
+.sprofile {
+    @include themify($themes) {
+        height: 100vh;
+        position: fixed;
+        width: 100%;
+        transition: all .2s ease-out;
+        background-color: themed("bg");
+
+        .container {
+            padding: 20px;
+            position: relative;
+            width: 97%;
+
+            .body {
+                height: calc(100vh - 50px);
+                position: relative;
+
+                .background {
+                    background:rgba(85,84,84,.5);
+                    height: 400px;
+                    position: relative;
+                    border-radius: 1rem;
+
+                    & img {
+                        border-radius: 8px;
+                        height: 400px;
+                        object-fit: cover;
+                        display: block;
+                        width: 100%;
+                    }
+
+                    & svg {
+                        backdrop-filter: blur(10px);
+                        background: rgba(0,0,0,.3);
+                        border-radius: 12px;
+                        font-size: 20px;
+                        height: 30px;
+                        margin-left: 10px;
+                        padding: 10px;
+                        position: absolute;
+                        top: 10%;
+                        width: 30px;
+                        fill: themed("profSvg");
+                    }
+                }
+
+                .card {
+                    --webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    background:#22212180;
+                    border-radius: 10px;
+                    left: 0;
+                    margin: 20px auto;
+                    padding: 60px 50px;
+                    position: absolute;
+                    right: 0;
+                    top: 30%;
+                    width: 80%;
+
+                    & img {
+                        border: 3px solid green;
+                        border-radius: 50%;
+                        left: 0;
+                        margin: auto;
+                        position: absolute;
+                        right: 0;
+                        top: -24%;
+                        width: 10rem;
+                        aspect-ratio: 1/1;
+                        overflow: hidden;
+                        object-fit: cover;
+                        display: block;
+                    }
+
+                    &--info {
+                        margin-top: 30px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .card-name {
+                            color: green;
+                            font-size: 25px;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+
+                        .card-job {
+                            color: #eaf0fb;
+                            font-style: italic;
+                            text-align: center;
+                        }
+                    }
+
+                    &--desc {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 15px auto;
+                        width: 50%;
+
+                        @media (max-width: $bp-small) {
+                            width: 100%;
+                        }
+                    
+                        .card-info {
+                            flex: 1 1;
+                            flex-direction: column;
+                            align-items: center;
+                            display: flex;
+                            justify-content: center;
+                            
+                            & span {
+                                color: themed("textColor");
+                            }
+
+                            .info {
+                                color: green;
+                                font-size: 24px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+
+                    &--bio {
+                        color: #eaf0fb;
+                        text-align: center;
+                    }
+
+                    &--btn {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 2rem;
+
+                        & button {
+                            background-color: green;
+                            display: flex;
+                            margin-right: 2rem;
+                            border: none;
+                            padding: 5px;
+                            cursor: pointer;
+                            width: 6rem;
+                            border-radius: 5px;
+                            justify-content: space-evenly;
+                            color: whitesmoke;
+
+                            & svg {
+                                fill: whitesmoke;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

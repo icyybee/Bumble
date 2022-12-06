@@ -1,0 +1,70 @@
+@import "../../index.scss";
+
+.connect {
+    @include themify($themes) {
+        margin: 2rem;
+
+        @media (max-width: $bp-tiny) {
+            margin: 1rem;
+        }
+
+        .container {
+            padding: 10px;
+        
+            .connect__header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+                color: themed("textColor");
+            
+                .connect--svg {
+                    display: flex;
+                    gap: 20px;
+            
+                    svg {
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+            .connect__footer {
+                display: flex;
+                justify-content: center;
+                margin-top: 1rem !important;
+                line-height: 1.7;
+                border: 1px solid #90ee90;
+                padding: 3px 0px;
+                width: 20%;
+                margin: auto;
+                cursor: pointer;
+
+                @media (max-width: $bp-small) {
+                    width: 30%;
+                }
+
+                @media (max-width: $bp-tiny) {
+                    padding: 0px;
+                }        
+
+                & span {
+                    font-size: 1.2rem;
+
+                    @media (max-width: $bp-small) {
+                        font-size: 1rem;
+                    }
+                }
+
+                & svg {
+                    fill: lightgreen;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;;
+
+                    &:hover {
+                        fill: green;
+                    }
+                }
+            }
+        }
+    }
+}

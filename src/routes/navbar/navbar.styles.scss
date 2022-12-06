@@ -1,0 +1,124 @@
+@import "../../index.scss";
+
+.nav {
+    @include themify($themes) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        height: 2rem;
+        border-bottom: 1px solid themed("border");
+        position: sticky;
+        top: 0;
+        z-index: themed("zIndex");
+        backdrop-filter: themed("backdropF");
+        background-color: themed("backdropC");
+
+        @media (max-width: $bp-medium) {
+            padding: 1rem;
+        }
+        
+        & svg {
+            cursor: pointer;
+            fill: themed("svg") ;
+            transition: all .2s ease-out;
+
+            &:hover {
+                fill: themed("svgHover");
+            }
+        }
+
+        &__left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            @media (max-width: $bp-medium) {
+                gap: 1rem;
+            }
+
+            & a {
+                text-decoration: none;
+            }
+
+            & span {
+                font-weight: bold;
+                font-size: 1.8rem;
+                color: #90ee90dc;
+                cursor: pointer;
+
+                @media (max-width: $bp-medium) {
+                    font-size: 1.5rem;
+                }
+
+                @media (max-width: $bp-small) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        &__mid {    
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid themed("border");
+            border-radius: 8px;
+            padding: 5px;
+
+            @media (max-width: $bp-mid) {
+                display: none;
+            }
+
+            input {
+                border: none;
+                width: 300px;
+                background-color: transparent;
+                font-size: .9rem;
+                outline: none;
+                color: themed("textColor");
+            }
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            @media (max-width: $bp-medium) {
+                gap: 1rem;
+            }
+
+            & a {
+                text-decoration: none;
+            }
+            
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+
+                img {
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+
+                    @media (max-width: $bp-small) {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+
+                & span {
+                    color: themed("textColor");
+
+                    @media (max-width: $bp-mid) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

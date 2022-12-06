@@ -1,0 +1,9 @@
+@import "../../index.scss";
+
+.mid {
+    @include themify($themes) {
+        flex: 6;
+        background-color: themed("bgSoft");
+        overflow: hidden;
+    }
+}
