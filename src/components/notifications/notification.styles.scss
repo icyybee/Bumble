@@ -5,6 +5,15 @@
     width: 25% !important;
     z-index: 2 !important; 
 
+    @media (max-width: $bp-mid) {
+        margin: 0 65% !important;
+    }
+    
+    @media (max-width: $bp-medium) {
+        margin: 0 40% !important;
+        width: 40% !important;
+    }
+
     @media (max-width: $bp-small) {
         margin: 0 8% !important;
         width: 70% !important;
