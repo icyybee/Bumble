@@ -5,17 +5,22 @@ import MidBar from "../../components/midbar/midbar.component";
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import MoodRoundedIcon from '@mui/icons-material/MoodRounded';
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DarkModeContext } from "../../contexts/darkModeContext";
 
 import { Outlet } from "react-router-dom";
 
 import "./home.styles.scss";
 
+import Suggest from "../../components/suggest/suggest.component";
+import Online from "../../components/online/online.component";
+
 import { Fragment } from "react";
 
 const Home = () => {
     const { darkMode } = useContext(DarkModeContext);
+    const [suggestOpen, setSuggestOpen] = useState(false);
+    const [onlineOpen, setOnlineOpen] = useState(false);
     
     return (
         <div className={`theme-${darkMode ? "dark" : "light"}`}>
@@ -24,10 +29,12 @@ const Home = () => {
                     <LeftBar />
                     <MidBar />
                     <RightBar />
-                    <PeopleAltRoundedIcon className="mobile suggested-friends" />
-                    <MoodRoundedIcon className="mobile online-friends" />
+                    <PeopleAltRoundedIcon className="mobile suggested-friends" onClick={() => setSuggestOpen(!suggestOpen)} />
+                    <MoodRoundedIcon className="mobile online-friends" onClick={() => setOnlineOpen(!onlineOpen)}/>
                 </div>
             </Fragment>
+            {suggestOpen && <Suggest />}
+            {onlineOpen && <Online />}
             <Outlet />
         </div>
     )
