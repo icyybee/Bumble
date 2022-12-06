@@ -1,24 +1,3 @@
-$bp-largest: 75em;   // 1200px
-$bp-large: 62.5em;   // 1000px
-$bp-medium: 56.25em;    // 900px;
-$bp-mid: 56em; //800px
-$bp-small: 37.5em;    // 600px;
-$bp-tiny: 31.25em; //500px
-$bp-smallest: 25em;   //400px
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'EB Garamond', serif;
-  
-  @media (max-width: $bp-largest) {
-    font-size: 90%;
-  }
-}
-
 $themes: (
   light: (
     textColor: #000,
@@ -83,3 +62,29 @@ $themes: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
+
+//breaking points
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 56.25em;    // 900px;
+$bp-mid: 56em; //800px
+$bp-small: 37.5em;    // 600px;
+$bp-tiny: 31.25em; //500px
+$bp-smallest: 25em;   //400px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include themify($themes) {
+    font-family: 'EB Garamond', serif;
+    background-color: themed("bg");
+  
+    @media (max-width: $bp-largest) {
+      font-size: 90%;
+    }
+  }
+}
+
