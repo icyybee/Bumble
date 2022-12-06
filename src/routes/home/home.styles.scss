@@ -6,4 +6,49 @@
     @media (max-width: $bp-small) {
         display: block;
     }
+
+    .mobile {
+        display: none;
+
+        @media (max-width: $bp-largest) {
+            display: block;
+            z-index: 4;
+            bottom: 3%;
+            cursor: pointer;
+            font-size: 30px;
+            right: 0;
+            left: 60%;
+            position: fixed;
+            border: 1px dotted #90ee90;
+            border-radius: 50%;
+            padding: 5px;
+            background-color:  #90ee908c;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            -webkit-animation: pulsing 2s linear 1s infinite;
+            animation: pulsing 2s linear 1s infinite;
+        }  
+        
+        @media (max-width: $bp-mid) {
+            left: 45%;
+        }
+        
+        @media (max-width: $bp-smallest) {
+            left: 38%;
+        }
+    }
+    
+    & .online-friends {
+        margin-left: 3rem;
+    }
+}
+
+@keyframes pulsing {
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(0.7);
+    }
 }

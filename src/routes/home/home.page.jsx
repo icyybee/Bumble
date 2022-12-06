@@ -2,6 +2,9 @@ import LeftBar from "../../components/leftbar/leftbar.component";
 import RightBar from "../../components/rightbar/rightbar.component";
 import MidBar from "../../components/midbar/midbar.component";
 
+import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
+import MoodRoundedIcon from '@mui/icons-material/MoodRounded';
+
 import { useContext } from "react";
 import { DarkModeContext } from "../../contexts/darkModeContext";
 
@@ -21,6 +24,8 @@ const Home = () => {
                     <LeftBar />
                     <MidBar />
                     <RightBar />
+                    <PeopleAltRoundedIcon className="mobile suggested-friends" />
+                    <MoodRoundedIcon className="mobile online-friends" />
                 </div>
             </Fragment>
             <Outlet />
