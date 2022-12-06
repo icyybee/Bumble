@@ -11,7 +11,6 @@
         .container {
             padding: 20px;
             position: relative;
-            width: 97%;
 
             .body {
                 height: calc(100vh - 50px);
@@ -58,6 +57,10 @@
                     right: 0;
                     top: 30%;
                     width: 80%;
+
+                    @media (max-width: $bp-small) {
+                        width: 70%;
+                    }
 
                     & img {
                         border: 3px solid green;
