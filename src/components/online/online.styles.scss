@@ -1,13 +1,16 @@
 @import '../../index.scss';
 
 .online__sect {
-    display: block;
-    width: 25%;
-    position: fixed;
-    z-index: 2;
-    top: 12%;
-    backdrop-filter: blur(20px);
-    background-color: rgba(0,0,0,.1);
+    display: none;
+    @media (max-width: $bp-largest) {
+        display: block;
+        width: 25%;
+        position: fixed;
+        z-index: 2;
+        top: 12%;
+        backdrop-filter: blur(20px);
+        background-color: rgba(0,0,0,.1);
+    }
 
     @media (max-width: $bp-mid) {
         width: 30%

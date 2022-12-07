@@ -8,6 +8,7 @@
         height: calc(100vh - 4rem);
         overflow: scroll;
         background-color: themed("bgSoft");
+        display: block;
 
         &::-webkit-scrollbar {
             display: none;
