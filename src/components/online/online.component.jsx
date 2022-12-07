@@ -1,6 +1,7 @@
 import { online } from '../../utils/onlineFriends';
 
 import "../rightbar/rightbar.styles.scss";
+import "./online.styles.scss";
 
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 

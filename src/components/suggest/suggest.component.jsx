@@ -10,6 +10,7 @@ import Friend4 from '../../assets/img4.jpg';
 import Friend5 from '../../assets/img5.jpg';
 
 import "../rightbar/rightbar.styles.scss";
+import "./suggest.styles.scss";
 
 const Suggest = () => {
     const [currentIndex, setCurrentIndex] = useState(100);
