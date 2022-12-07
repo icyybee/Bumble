@@ -69,9 +69,14 @@ const Chat = () => {
                     <div className='right'>
                         <div className='top'>
                             <div className='info'>
-                                <img src={profile.img} alt=''/>
-                                <div className={profile.btn}></div>
-                                <span>{profile.nick}</span>
+                                <Link to='/'>
+                                    <NavigateBeforeIcon className='chat-back' />
+                                </Link>
+                                <div style={{display: "flex"}}>
+                                    <img src={profile.img} alt=''/>
+                                    <div className={profile.btn}></div>
+                                    <span>{profile.nick}</span>
+                                </div>
                             </div>
                             <div className='call'>
                                 <VideocamRoundedIcon />

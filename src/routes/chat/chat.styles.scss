@@ -24,6 +24,14 @@
                 .left {
                     width: 30%;
                     background-color: themed("bg");
+
+                    @media (max-width: $bp-largest) {
+                        width: 40%;
+                    }
+                    
+                    @media (max-width: $bp-mid) {
+                        display: none;
+                    }
                     
                     & svg {
                         backdrop-filter: blur(10px);
@@ -99,11 +107,19 @@
                         }
                     }
                 }
-
+                
                 .right {
                     width: 70%;
                     background-color: themed("bgSoft");
                     border-radius: 3px;
+
+                    @media (max-width: $bp-largest) {
+                        width: 60%;
+                    }
+
+                    @media (max-width: $bp-mid) {
+                        width: 100%;
+                    }
 
                     .top {
                         background-color: #0000004d;
@@ -113,14 +129,37 @@
                         justify-content: space-between;
                         padding: 10px;
 
+                        @media (max-width: $bp-small) {
+                            padding: 5px;
+                        }
+                        
                         .info {
                             margin-left: 1rem;
                             display: flex;
+                            
+                            & a {
+                                display: none;
+                                text-decoration: none;
+                                color: inherit;
+    
+                                @media (max-width: $bp-mid) {
+                                    display: block;
+                                    align-self: center;
+                                }
+
+                                & svg {
+                                    font-size: 3rem;
+
+                                    @media (max-width: $bp-small) {
+                                        font-size: 2rem;
+                                    }
+                                }
+                            }
 
                             & img {
                                 border-radius: 50%;
                                 position: absolute;
-                                width: 4rem;
+                                width: 3.5rem;
                                 aspect-ratio: 1/1;
                                 overflow: hidden;
                                 display: block;
@@ -135,8 +174,8 @@
                                 height: 9px;
                                 position: absolute;
                                 width: 9px;
-                                margin-top: 3.1rem;
-                                margin-left: 3rem;
+                                margin-top: 2.7rem;
+                                margin-left: 2.7rem;
                             }
 
                             .dot-green {
@@ -175,6 +214,7 @@
                         bottom: 0;
                         position: absolute;
                         width: 100%;
+                        margin-bottom: 0rem !important;
                         
                         & form {
                             padding: 20px;
